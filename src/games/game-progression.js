@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import getRandomNumber from '../getRandomNumber.js';
+import randomNumber from '../randomNumber.js';
 import createGameLogic from '../index.js';
 
 const description = 'What number is missing in the progression?';
@@ -23,11 +23,11 @@ const getProgression = (firstNumOfProg, stepOfProg, lengthOfProg) => {
 
 const getQuestionAndAnswer = () => {
   // eslint-disable-next-line max-len
-  const progressionLength = getRandomNumber(minNumberOfLengthProgression, maxNumberOfLengthProgression);
-  const firstNumberProgression = getRandomNumber(minNumber, maxNumber);
-  const progressionStep = getRandomNumber(minNumberOfStepProgression, maxNumberOfStepProgression);
+  const progressionLength = randomNumber(minNumberOfLengthProgression, maxNumberOfLengthProgression);
+  const firstNumberProgression = randomNumber(minNumber, maxNumber);
+  const progressionStep = randomNumber(minNumberOfStepProgression, maxNumberOfStepProgression);
   const progression = getProgression(firstNumberProgression, progressionStep, progressionLength);
-  const randomIndexValue = getRandomNumber(minNumberOfIndex, maxNumberOfIndex);
+  const randomIndexValue = randomNumber(minNumberOfIndex, maxNumberOfIndex);
 
   const expectedAnswer = String(progression[randomIndexValue]);
   progression[randomIndexValue] = '..';

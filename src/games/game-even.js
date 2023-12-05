@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import getRandomNumber from '../getRandomNumber.js';
+import getRandomNumber from '../randomNumber.js';
 import createGameLogic from '../index.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';

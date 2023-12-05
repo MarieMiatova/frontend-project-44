@@ -3,12 +3,12 @@ import createGameLogic from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 const minNumber = 1;
-const maxNumber = 100;
-const getGcd = (rndNum1, rndNum2) => {
-  if (rndNum2 === 0) {
-    return rndNum1;
+const maxNumber = 50;
+const getGcd = (x, y) => {
+  if (y === 0) {
+    return x;
   }
-  return getGcd(rndNum2, rndNum1 % rndNum2);
+  return getGcd(y, x % y);
 };
 
 const getQuestionAndAnswer = () => {

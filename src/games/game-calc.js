@@ -6,7 +6,7 @@ import createGameLogic from '../index.js';
 const description = 'What is the result of the expression?';
 const marks = ['+', '-', '*'];
 const minNumber = 0;
-const maxNumber = 50;
+const maxNumber = 25;
 
 const calc = (firstValue, secondValue, mark) => {
   switch (mark) {

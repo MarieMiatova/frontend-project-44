@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import getRandomNumber from '../randomNumber.js';
 import createGameLogic from '../index.js';
 

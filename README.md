@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/MarieMiatova/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/MarieMiatova/frontend-project-44/actions)
 
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/7a6d5628888bd1a6fedc/maintainability)](https://codeclimate.com/github/MarieMiatova/frontend-project-44/maintainability)
 
 
 Welcome to the Brain Games!

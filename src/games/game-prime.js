@@ -2,6 +2,8 @@ import getRandomNumber from '../randomNumber.js';
 import createGameLogic from '../index.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const minNumber = 2;
+const maxNumber = 150;
 
 const isPrime = (num) => {
   for (let i = 2, max = Math.sqrt(num); i <= max; i += 1) {
@@ -13,8 +15,6 @@ const isPrime = (num) => {
 };
 
 const getQuestionAndAnswer = () => {
-  const minNumber = 2;
-  const maxNumber = 150;
   const question = getRandomNumber(minNumber, maxNumber);
 
   const expectedAnswer = isPrime(question) ? 'yes' : 'no';

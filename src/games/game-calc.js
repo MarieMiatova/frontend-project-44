@@ -3,6 +3,8 @@ import createGameLogic from '../index.js';
 
 const description = 'What is the result of the expression?';
 const marks = ['+', '-', '*'];
+const minNumber = 0;
+const maxNumber = 25;
 
 const calc = (firstValue, secondValue, mark) => {
   switch (mark) {
@@ -18,8 +20,6 @@ const calc = (firstValue, secondValue, mark) => {
 };
 
 const calcLogic = () => {
-  const minNumber = 0;
-  const maxNumber = 25;
   const firstValue = getRandomNumber(minNumber, maxNumber);
   const secondValue = getRandomNumber(minNumber, maxNumber);
   const mark = marks[getRandomNumber(0, marks.length - 1)];

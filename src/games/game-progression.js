@@ -10,7 +10,10 @@ const minNumberOfLengthProgression = 10;
 const maxNumberOfLengthProgression = 20;
 const minNumberOfIndex = 0;
 const maxNumberOfIndex = 10;
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of cb0aaa8 (Initial commit)
 const getProgression = (firstNumOfProg, stepOfProg, lengthOfProg) => {
   const arr = [firstNumOfProg];
 
@@ -22,6 +25,10 @@ const getProgression = (firstNumOfProg, stepOfProg, lengthOfProg) => {
 };
 
 const getQuestionAndAnswer = () => {
+<<<<<<< HEAD
+=======
+  // eslint-disable-next-line max-len
+>>>>>>> parent of cb0aaa8 (Initial commit)
   const progressionLength = randomNumber(minNumberOfLengthProgression, maxNumberOfLengthProgression);
   const firstNumberProgression = randomNumber(minNumber, maxNumber);
   const progressionStep = randomNumber(minNumberOfStepProgression, maxNumberOfStepProgression);

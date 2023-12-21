@@ -25,4 +25,3 @@ const startGcdGame = () => {
   createGameLogic(description, getQuestionAndAnswer);
 };
 export default startGcdGame;
-

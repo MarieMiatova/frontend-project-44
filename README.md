@@ -3,7 +3,6 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/7a6d5628888bd1a6fedc/maintainability)](https://codeclimate.com/github/MarieMiatova/frontend-project-44/maintainability)
 
-
 Welcome to the Brain Games!
 
 1. Brain-even

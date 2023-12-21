@@ -4,10 +4,6 @@ import createGameLogic from '../index.js';
 const description = 'Find the greatest common divisor of given numbers.';
 const minNumber = 1;
 const maxNumber = 50;
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of cb0aaa8 (Initial commit)
 const getGcd = (x, y) => {
   if (y === 0) {
     return x;
@@ -29,3 +25,4 @@ const startGcdGame = () => {
   createGameLogic(description, getQuestionAndAnswer);
 };
 export default startGcdGame;
+

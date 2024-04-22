@@ -8,7 +8,7 @@ const evenLogic = (description) => {
   const isEven = (number) => number % 2 === 0;
 
   const question = getRandomNumber(minNumber, maxNumber);
-  const answer = isEven(question) ? 'да' : 'нет';
+  const answer = isEven(question) ? 'yes' : 'no';
 
   return {
     description,

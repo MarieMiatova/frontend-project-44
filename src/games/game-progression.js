@@ -23,7 +23,10 @@ const startProgressionGame = () => {
   };
 
   const getQuestionAndAnswer = () => {
-    const progressionLength = randomNumber(minNumberOfLengthProgression, maxNumberOfLengthProgression);
+    const progressionLength = randomNumber(
+      minNumberOfLengthProgression,
+      maxNumberOfLengthProgression,
+    );
     const firstNumberProgression = randomNumber(minNumber, maxNumber);
     const progressionStep = randomNumber(minNumberOfStepProgression, maxNumberOfStepProgression);
     const progression = getProgression(firstNumberProgression, progressionStep, progressionLength);

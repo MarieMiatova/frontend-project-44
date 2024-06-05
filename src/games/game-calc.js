@@ -1,7 +1,7 @@
 import getRandomNumber from '../randomNumber.js';
 import createGameLogic from '../index.js';
 
-const calc = (firstValue, secondValue, mark) => {
+const resultCalc = (firstValue, secondValue, mark) => {
   switch (mark) {
     case '+':
       return String(firstValue + secondValue);
@@ -24,7 +24,7 @@ const startCalcGame = () => {
     const firstValue = getRandomNumber(minNumber, maxNumber);
     const secondValue = getRandomNumber(minNumber, maxNumber);
     const mark = marks[getRandomNumber(0, marks.length - 1)];
-    const answer = String(calc(firstValue, secondValue, mark));
+    const answer = String(resultCalc(firstValue, secondValue, mark));
     const question = `${firstValue} ${mark} ${secondValue}`;
     return [question, answer];
   };

@@ -13,7 +13,7 @@ const isPrime = (num) => {
 
 // Функция для начала игры на определение простого числа
 const startPrimeGame = () => {
-  const description = 'Answer "yes" if a given number is prime. Otherwise answer "no".';
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const minNumber = 2;
   const maxNumber = 150;
 

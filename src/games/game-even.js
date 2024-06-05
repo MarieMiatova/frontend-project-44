@@ -11,7 +11,8 @@ const startEvenGame = () => {
   const evenLogic = () => {
     const question = getRandomNumber(minNumber, maxNumber);
     const answer = isEven(question) ? 'yes' : 'no';
-    return [question, answer];
+
+    return [question, answer]; // Возвращаемый массив в квадратных скобках для ясности
   };
 
   createGameLogic(description, evenLogic);

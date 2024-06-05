@@ -10,7 +10,7 @@ const resultCalc = (firstValue, secondValue, mark) => {
     case '*':
       return String(firstValue * secondValue);
     default:
-      throw new Error(`operation ${mark} is not supported`);
+      throw new Error(`Operation ${mark} is not supported`);
   }
 };
 
@@ -24,9 +24,11 @@ const startCalcGame = () => {
     const firstValue = getRandomNumber(minNumber, maxNumber);
     const secondValue = getRandomNumber(minNumber, maxNumber);
     const mark = marks[getRandomNumber(0, marks.length - 1)];
+
     const answer = String(resultCalc(firstValue, secondValue, mark));
     const question = `${firstValue} ${mark} ${secondValue}`;
-    return [question, answer];
+
+    return [question, answer]; // Возвращаемый массив в квадратных скобках для ясности
   };
 
   createGameLogic(description, calcLogic);

@@ -1,39 +1,40 @@
 import randomNumber from '../randomNumber.js';
 import createGameLogic from '../index.js';
 
-const getProgression = (firstNumOfProg, stepOfProg, lengthOfProg) => {
-  const arr = [firstNumOfProg];
+// Функция для генерации арифметической прогрессии
+const generateArithmeticProgression = (firstNum, step, length) => {
+  const progression = [firstNum];
 
-  for (let i = 0; arr.length <= lengthOfProg; i += 1) {
-    arr.push(arr[i] + stepOfProg);
+  for (let i = 0; progression.length < length; i += 1) {
+    progression.push(progression[i] + step);
   }
 
-  return arr;
+  return progression;
 };
 
+// Функция для запуска игры на определение пропущенного числа в прогрессии
 const startProgressionGame = () => {
   const description = 'What number is missing in the progression';
-  const minNumber = 1;
-  const maxNumber = 10;
-  const minNumberOfStepProgression = 1;
-  const maxNumberOfStepProgression = 5;
-  const minNumberOfLengthProgression = 10;
-  const maxNumberOfLengthProgression = 20;
-  const minNumberOfIndex = 0;
-  const maxNumberOfIndex = 10;
+  const minNum = 1;
+  const maxNum = 10;
+  const minStep = 1;
+  const maxStep = 5;
+  const minLength = 10;
+  const maxLength = 20;
+  const minIndex = 0;
+  const maxIndex = 10;
 
   const getQuestionAndAnswer = () => {
-    const progressionLength = randomNumber(
-      minNumberOfLengthProgression,
-      maxNumberOfLengthProgression,
-    );
-    const firstNumberProgression = randomNumber(minNumber, maxNumber);
-    const progressionStep = randomNumber(minNumberOfStepProgression, maxNumberOfStepProgression);
-    const progression = getProgression(firstNumberProgression, progressionStep, progressionLength);
-    const randomIndexValue = randomNumber(minNumberOfIndex, maxNumberOfIndex);
+    const progressionLength = randomNumber(minLength, maxLength);
+    const firstNumProgression = randomNumber(minNum, maxNum);
+    const progressionStep = randomNumber(minStep, maxStep);
 
-    const expectedAnswer = String(progression[randomIndexValue]);
-    progression[randomIndexValue] = '..';
+    // eslint-disable-next-line max-len
+    const progression = generateArithmeticProgression(firstNumProgression, progressionStep, progressionLength);
+    const randomIndex = randomNumber(minIndex, maxIndex);
+
+    const expectedAnswer = String(progression[randomIndex]);
+    progression[randomIndex] = '..';
     const question = progression.join(' ');
 
     return [question, expectedAnswer];

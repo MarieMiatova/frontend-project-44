@@ -1,11 +1,11 @@
 import getRandomNumber from '../randomNumber.js';
 import createGameLogic from '../index.js';
 
-const calculateGcd = (x, y) => {
+const getGcd = (x, y) => {
   if (y === 0) {
     return x;
   }
-  return calculateGcd(y, x % y);
+  return getGcd(y, x % y);
 };
 
 const startGcdGame = () => {
@@ -14,11 +14,11 @@ const startGcdGame = () => {
   const maxNumber = 50;
 
   const getQuestionAndAnswer = () => {
-    const firstNumber = getRandomNumber(minNumber, maxNumber);
-    const secondNumber = getRandomNumber(minNumber, maxNumber);
+    const firstValue = getRandomNumber(minNumber, maxNumber);
+    const secondValue = getRandomNumber(minNumber, maxNumber);
 
-    const question = `${firstNumber} ${secondNumber}`;
-    const expectedAnswer = calculateGcd(firstNumber, secondNumber);
+    const question = `${firstValue} ${secondValue}`;
+    const expectedAnswer = getGcd(firstValue, secondValue);
 
     return [question, String(expectedAnswer)];
   };

@@ -1,7 +1,8 @@
-import getRandomNumber from '../randomNumber.js';
 import createGameLogic from '../index.js';
+import getRandomNumber from '../randomNumber.js';
 
-// Функция для проверки, является ли число простым
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const isPrime = (num) => {
   for (let i = 2, max = Math.sqrt(num); i <= max; i += 1) {
     if (num % i === 0) {
@@ -11,20 +12,10 @@ const isPrime = (num) => {
   return true;
 };
 
-// Функция для начала игры на определение простого числа
-const startPrimeGame = () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const minNumber = 2;
-  const maxNumber = 150;
-
-  const getQuestionAndAnswer = () => {
-    const question = getRandomNumber(minNumber, maxNumber);
-    const expectedAnswer = isPrime(question) ? 'yes' : 'no';
-
-    return [question, expectedAnswer];
-  };
-
-  createGameLogic(description, getQuestionAndAnswer);
+const startPrime = () => {
+  const randomPrime = getRandomNumber(2, 50);
+  const answer = isPrime(randomPrime) === false ? 'no' : 'yes';
+  return [String(randomPrime), answer];
 };
 
-export default startPrimeGame;
+export default () => createGameLogic(description, startPrime);

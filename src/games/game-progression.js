@@ -1,7 +1,16 @@
-import randomNumber from '../randomNumber.js';
+import getRandomNumber from '../randomNumber.js';
 import createGameLogic from '../index.js';
 
-// Функция для генерации арифметической прогрессии
+const description = 'What number is missing in the progression';
+const minNumber = 1;
+const maxNumber = 10;
+const minNumberOfStepProgression = 1;
+const maxNumberOfStepProgression = 5;
+const minNumberOfLengthProgression = 10;
+const maxNumberOfLengthProgression = 20;
+const minNumberOfIndex = 0;
+const maxNumberOfIndex = 10;
+
 const getProgression = (firstNumOfProg, stepOfProg, lengthOfProg) => {
   const arr = [firstNumOfProg];
 
@@ -12,35 +21,24 @@ const getProgression = (firstNumOfProg, stepOfProg, lengthOfProg) => {
   return arr;
 };
 
-// Функция для запуска игры на определение пропущенного числа в прогрессии
+const getQuestionAndAnswer = () => {
+  const progressionLength = getRandomNumber(
+    minNumberOfLengthProgression,
+    maxNumberOfLengthProgression,
+  );
+  const firstNumberProgression = getRandomNumber(minNumber, maxNumber);
+  const progressionStep = getRandomNumber(minNumberOfStepProgression, maxNumberOfStepProgression);
+  const progression = getProgression(firstNumberProgression, progressionStep, progressionLength);
+  const randomIndexValue = getRandomNumber(minNumberOfIndex, maxNumberOfIndex);
+
+  const expectedAnswer = String(progression[randomIndexValue]);
+  progression[randomIndexValue] = '..';
+  const question = progression.join(' ');
+
+  return [question, expectedAnswer];
+};
+
 const startProgressionGame = () => {
-  const description = 'What number is missing in the progression';
-  const minNumber = 1;
-  const maxNumber = 10;
-  const minNumberOfStepProgression = 1;
-  const maxNumberOfStepProgression = 5;
-  const minNumberOfLengthProgression = 10;
-  const maxNumberOfLengthProgression = 20;
-  const minNumberOfIndex = 0;
-  const maxNumberOfIndex = 10;
-
-  const getQuestionAndAnswer = () => {
-    const progressionLength = randomNumber(
-      minNumberOfLengthProgression,
-      maxNumberOfLengthProgression,
-    );
-    const firstNumberProgression = randomNumber(minNumber, maxNumber);
-    const progressionStep = randomNumber(minNumberOfStepProgression, maxNumberOfStepProgression);
-    const progression = getProgression(firstNumberProgression, progressionStep, progressionLength);
-    const randomIndexValue = randomNumber(minNumberOfIndex, maxNumberOfIndex);
-
-    const expectedAnswer = String(progression[randomIndexValue]);
-    progression[randomIndexValue] = '..';
-    const question = progression.join(' ');
-
-    return [question, expectedAnswer];
-  };
-
   createGameLogic(description, getQuestionAndAnswer);
 };
 

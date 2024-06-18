@@ -16,7 +16,7 @@ const calc = (number1, number2, operator) => {
   }
 };
 
-const startCalc = () => {
+const getQuestionAndAnswer = () => {
   const randomNumber1 = getRandomNumber(0, 25);
   const randomNumber2 = getRandomNumber(0, 25);
   const operators = ['+', '-', '*'];
@@ -27,4 +27,4 @@ const startCalc = () => {
   return [question, String(result)];
 };
 
-export default () => createGameLogic(description, startCalc);
+export default () => createGameLogic(description, getQuestionAndAnswer);
